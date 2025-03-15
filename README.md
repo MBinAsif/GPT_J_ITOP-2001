@@ -88,6 +88,11 @@ Example response:
     "answer": "As per section 149 of the Income Tax Ordinance 2001, the tax rate for salaried individuals varies based on income slabs. For example, individuals earning up to PKR 600,000 annually are exempt from tax..."
 }
 ```
+Or
+
+```
+streamlit run ui/chatbot_ui.py
+```
 
 ## 📌 Notes
 
