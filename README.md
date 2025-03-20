@@ -1,15 +1,18 @@
-# Tax Law Chatbot (Pakistan Income Tax Ordinance 2001)
 
-This project fine-tunes GPT-J on the **Income Tax Ordinance 2001 of Pakistan** using **LoRA (Low-Rank Adaptation)** for efficient fine-tuning. It also implements **Retrieval-Augmented Generation (RAG)** with FAISS for metadata-based retrieval and dynamic tax-related query answering.
+# **Tax Law Chatbot (Pakistan Income Tax Ordinance 2001)**  
 
-## 🚀 Features
+This project fine-tunes **GPT-J** on the **Income Tax Ordinance 2001 of Pakistan** using **LoRA** (Low-Rank Adaptation) for efficient fine-tuning. It also implements **Retrieval-Augmented Generation (RAG)** with **FAISS** for metadata-based retrieval and dynamic tax-related query answering.
 
-- **Fine-Tunes GPT-J with LoRA**: Optimized training for resource efficiency.
-- **Retrieval-Augmented Generation (RAG)**: Uses FAISS to fetch the most relevant sections before answering.
-- **Metadata-Based Search**: Supports retrieval by section number, keywords, and other metadata.
-- **Fast API Backend**: Deploys as an API for querying tax-related information dynamically.
+## 🚀 **Features**  
 
-## 📁 Project Structure
+- **Fine-Tunes GPT-J with LoRA**: Optimized training for resource efficiency.  
+- **Retrieval-Augmented Generation (RAG)**: Uses FAISS to fetch the most relevant sections before answering.  
+- **Metadata-Based Search**: Supports retrieval by section number, keywords, and other metadata.  
+- **FastAPI Backend**: Deploys as an API for querying tax-related information dynamically.  
+
+---
+
+## 📁 **Project Structure**  
 
 ```
 📂 TaxLawChatbot
@@ -26,87 +29,94 @@ This project fine-tunes GPT-J on the **Income Tax Ordinance 2001 of Pakistan** u
 │   ├── retrieve_and_respond.py # Retrieves sections and generates responses using RAG
 │── 📂 api
 │   ├── app.py                # FastAPI backend for querying
+│── 📂 ui
+│   ├── chatbot_ui.py         # Streamlit UI for chatbot
 │── requirements.txt          # Required Python packages
 │── README.md                 # Project Documentation
 ```
 
-## 🛠️ Installation
+---
 
-### 1️⃣ Clone the Repository
+## 🛠️ **Installation**  
+
+### **1️⃣ Clone the Repository**  
 
 ```bash
 git clone https://github.com/yourusername/TaxLawChatbot.git
 cd TaxLawChatbot
 ```
 
-### 2️⃣ Install Dependencies
+### **2️⃣ Install Dependencies**  
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Download and Prepare Data
+### **3️⃣ Download and Prepare Data**  
 
-1. Place the **Income Tax Ordinance 2001** PDF inside the `data/` folder.
-2. Run the script to extract and preprocess text:
+1. Place the **Income Tax Ordinance 2001 PDF** inside the `data/` folder.  
+2. Run the script to extract and preprocess text:  
 
 ```bash
 python scripts/extract_text.py
 python scripts/preprocess.py
 ```
 
-3. Generate the FAISS index:
+3. Generate the **FAISS index** for efficient retrieval:  
 
 ```bash
 python scripts/create_faiss_index.py
 ```
 
-### 4️⃣ Fine-Tune GPT-J
+### **4️⃣ Fine-Tune GPT-J**  
 
 ```bash
 python scripts/fine_tune.py
 ```
 
-### 5️⃣ Start API Server
+### **5️⃣ Start API Server**  
 
 ```bash
 uvicorn api.app:app --reload
 ```
 
-## 🔍 Usage
+---
 
-Once the API is running, you can query tax-related questions:
+## 🔍 **Usage**  
+
+Once the API is running, you can query tax-related questions using **cURL**:  
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/query" -H "Content-Type: application/json" -d '{"question": "What is the tax rate for salaried individuals in Pakistan?"}'
 ```
 
-Example response:
+### **Example Response:**  
 
 ```json
 {
     "answer": "As per section 149 of the Income Tax Ordinance 2001, the tax rate for salaried individuals varies based on income slabs. For example, individuals earning up to PKR 600,000 annually are exempt from tax..."
 }
 ```
-Or
 
-```
+Alternatively, run the **Streamlit UI**:  
+
+```bash
 streamlit run ui/chatbot_ui.py
 ```
 
-## 📌 Notes
+---
 
-- Ensure that `tax_law_faiss.index` is present before running the API.
-- Use `retrieve_and_respond.py` for debugging retrieval issues.
+## 📌 **Notes**  
 
-## 🤝 Contribution
-
-Contributions are welcome! Feel free to submit a PR or open an issue.
-
-## 📜 License
-
-This project is licensed under the MIT License.
+- Ensure that **tax_law_faiss.index** is present before running the API.  
+- Use `retrieve_and_respond.py` for debugging retrieval issues.  
 
 ---
 
-🚀 **Built with AI & Tax Law Expertise!** 🚀
+## 📜 **License**  
+
+This project is licensed under the **MIT License**.  
+
+---
+
+🚀 **Built with AI & Tax Law Expertise BY BRIDGEHOMIES** 🚀  
