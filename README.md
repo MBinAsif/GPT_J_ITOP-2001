@@ -58,20 +58,14 @@ pip install -r requirements.txt
 2. Run the script to extract and preprocess text:  
 
 ```bash
-python scripts/extract_text.py
-python scripts/preprocess.py
-```
-
-3. Generate the **FAISS index** for efficient retrieval:  
-
-```bash
-python scripts/create_faiss_index.py
+python scripts/convert_pdf_to_json.py
+python scripts/generate_embeddings.py
 ```
 
 ### **4️⃣ Fine-Tune GPT-J**  
 
 ```bash
-python scripts/fine_tune.py
+python scripts/fine_tune_gptj_lora.py
 ```
 
 ### **5️⃣ Start API Server**  
